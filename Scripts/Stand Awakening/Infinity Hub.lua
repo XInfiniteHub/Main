@@ -19,7 +19,7 @@ print("Credits libray: Rayfield Libray / Discord Server: Sirus")
 
 --// Rayfiel Libray
 getgenv().SecureMode = true
-local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/XInfiniteHub/teste/main/Main/Code/Libray%20Raifield'))()
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/XInfiniteHub/Main/main/Font/Libray/RayFieldModed.lua'))()
 local Window = Rayfield:CreateWindow({
    Name = "Infinity Hub  |  @Darkzin, Cool",
    LoadingTitle = "Infinity Hub",
@@ -42,7 +42,7 @@ local Window = Rayfield:CreateWindow({
       FileName = "SiriusKey",
       SaveKey = true,
       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-      Key = "YFq%$EMQW6ANP8uAARSzghSsj(sPgQ·9grb7g2AqifpJ·7qTwX"
+      Key = "LC)baJ2fcidV3rpl=6RaYo2kBRNmG(xHtf1&sK8(!WzqaoVd4l"
    }
 })
 
