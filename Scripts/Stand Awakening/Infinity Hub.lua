@@ -1,12 +1,18 @@
+
 --// Notification Libray
 local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))()
 local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))()
+local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Jxereas/UI-Libraries/main/notification_gui_library.lua", true))()
 
 
 
 --// Variables
 local plr = game:GetService("Players").LocalPlayer
 local mouse = plr:GetMouse()
+local CheckSpeed = plr.Character.Humanoid.WalkSpeed
+local CheckJump = plr.Character.Humanoid.JumpPower
+local CheckHealth = plr.Character.Humanoid.Health
+local CheckStand = plr.Backpack.ClassName == "LocalScript"
 
 
 
@@ -14,6 +20,8 @@ local mouse = plr:GetMouse()
 print("Infinity Hub Loaded")
 print("Heve fun")
 print("Credits libray: Rayfield Libray / Discord Server: Sirus")
+--// Checks
+print("")
 
 
 
@@ -42,7 +50,7 @@ local Window = Rayfield:CreateWindow({
       FileName = "SiriusKey",
       SaveKey = true,
       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-      Key = "LC)baJ2fcidV3rpl=6RaYo2kBRNmG(xHtf1&sK8(!WzqaoVd4l"
+      Key = "hpk)ZWiKyjqq&At57!DvKtfK$tFR32g%$9WLI5X0c2t/0zDnoihpk)ZWiKyjqq&At57!DvKtfK$tFR32g%$9WLI5X0c2t/0zDnoi"
    }
 })
 
@@ -611,20 +619,14 @@ local Button = Tab:CreateButton({
    Info = "Click to remove a fire parts", -- Speaks for itself, Remove if none.
    Interact = 'Changable',
    Callback = function()
-		if game:GetService("Workspace").Map.Arena.FinalHelicopter.Fire then
 			game:GetService("Workspace").Map.Arena.FinalHelicopter.Fire:Destroy()
 			game:GetService("Workspace").Map.Arena.FinalHelicopter.Fire:Destro()
-		end
-		if game:GetService("Workspace").Map.Arena.mini.Fire then
 			game:GetService("Workspace").Map.Arena.mini.Fire:Destroy()
 			game:GetService("Workspace").Map.Arena.mini.Fire:Destroy()
-		end
-		if game:GetService("Workspace").Map.Arena.Model.Fire then
 			game:GetService("Workspace").Map.Arena.Model.Fire:Destroy()
 			game:GetService("Workspace").Map.Arena.Model.Fire:Destroy()
 			game:GetService("Workspace").Map.Arena.Model.Fire:Destroy()
 			game:GetService("Workspace").Map.Arena.Model.Fire:Destroy()
-		end
    end,
 })
 
@@ -966,6 +968,39 @@ local Button = Tab:CreateButton({
    end,
 })
 local Button = Tab:CreateButton({
+   Name = "Player Info",
+   Info = "Click to check player info.", -- Speaks for itself, Remove if none.
+   Interact = 'Changable',
+   Callback = function()
+		Notification.new("info", "Obtento informações do player", "Aguarde um momento")
+		 wait(3)
+		if plr then
+			Notification.new("success", "Informações obtidas com sucesso! ", "Precione F9")
+			print("...")
+			print("Now")
+			print("Player speed ==", CheckSpeed)
+			print("Player jump ==", CheckJump)
+			print("Player health ==", CheckHealth)
+			print("Player Stand ==", CHeckStand)
+		else
+			Notification.new("error", "Error", "Você não é um jogador")
+		end
+   end,
+})
+local Button = Tab:CreateButton({
+   Name = "Force respawn",
+   Info = "If player as buged, use this", -- Speaks for itself, Remove if none.
+   Interact = 'Changable',
+   Callback = function()
+		plr.Character.Humanoid.WalkSpeed = 0
+		 wait(0.1)
+		Notification.new("info", "Force Respawn", "Aguarde um momento...")
+		 wait(2)
+		game:GetService("Players").LocalPlayer.Character:Destroy()
+		Notification.new("success", "Force Respawn", "Jogador respawnado")
+   end,
+})
+local Button = Tab:CreateButton({
    Name = "Infinite Jump",
    Info = "Click to Infinite Jump", -- Speaks for itself, Remove if none.
    Interact = 'Changable',
@@ -987,6 +1022,8 @@ local Button = Tab:CreateButton({
 		    end
 		end)
 
+		wait(.4)
+
 		task.spawn(function ()
 	  		local Slider = Tab:CreateSlider({
 	  		Name = "Jump Height",
@@ -1006,7 +1043,8 @@ local Button = Tab:CreateButton({
 
 
 
---// Local Player Main
+
+--// Item Notifier Main
 local Tab = Window:CreateTab("Item Notifier")
 local Button = Tab:CreateButton({
    Name = "Check Arrow",
@@ -1166,3 +1204,60 @@ local Button = Tab:CreateButton({
 
 
 --// End Script
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--[[
+
+
+
+
+--// Logger Gay :>
+local twogay = game:GetService("Players").itz_azuc99
+local gay = game:GetService("Players").1Astarote
+
+local gayspeed = game:GetService("Players").LocalPlayer.Character.Humanoid
+
+------------
+if gay then
+	wait(1)
+	while wait() do
+
+		for i = 16, 1, -1  do
+			gayspeed.WalkSpeed = i
+		end
+		if game:GetService("Workspace").FilteringEnabled == true then
+			game:GetService("StarterGui"):SetCore("SendNotification", {
+				Title = " GAY DETECTADO ";
+				Text = " UM GAY FOI DETECTADO GO GO GO GO GO GO ";
+			})
+		end
+
+		wait(10)
+		gay:Kick("UM GAY FOI KIKADO, VAI")
+	end
+end
+
+if twogay then
+	plr:Kick("Tentou com a alt ne safado KKKKJK")
+end
+------------
+
+
+
+
+--]]
