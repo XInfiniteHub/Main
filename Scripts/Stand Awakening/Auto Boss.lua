@@ -36,7 +36,7 @@ local Window = Rayfield:CreateWindow({
       FileName = "SiriusKey",
       SaveKey = true,
       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-      Key = "LC)baJ2fcidV3rpl=6RaYo2kBRNmG(xHtf1&sK8(!WzqaoVd4l"
+      Key = "hpk)ZWiKyjqq&At57!DvKtfK$tFR32g%$9WLI5X0c2t/0zDnoihpk)ZWiKyjqq&At57!DvKtfK$tFR32g%$9WLI5X0c2t/0zDnoi"
    }
 })
 
