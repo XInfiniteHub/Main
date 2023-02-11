@@ -60,7 +60,7 @@ local Window = Rayfield:CreateWindow({
 local Tab = Window:CreateTab("Mobile Version")
 local Paragraph = Tab:CreateParagraph({Title = "Mobile Version Main", Content = "Bem vindo a versão mobile, clique no botão abaixo para gerar o botão de fechar e abri a gui."})
 local Button = Tab:CreateButton({
-   Name = "Createe Button open / close",
+   Name = "Create Button open / close",
    Info = "Click this for opem / close gui (Mobile version)", -- Speaks for itself, Remove if none.
    Interact = 'Changable',
    Callback = function()
