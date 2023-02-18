@@ -1,13 +1,24 @@
 
 --// Notification Libray
-local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))()
-local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))()
 local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Jxereas/UI-Libraries/main/notification_gui_library.lua", true))()
+
+
+--// Others Librarys
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/AbstractPoo/Main/main/Notifications.lua"),true))()
+local notifications = loadstring(game:HttpGet(("https://raw.githubusercontent.com/AbstractPoo/Main/main/Notifications.lua"),true))()
+--[[
+    notifications:message{
+        Title = "Walkspeed <font color='rgb(130, 220, 120)'>Enabled</font>",
+        Description = "Current walkspeed: <b>32</b>",
+        Icon = 6023426926
+    }
+--]]
 
 
 
 --// Variables
 local plr = game:GetService("Players").LocalPlayer
+local plrId = plr.UserId
 local mouse = plr:GetMouse()
 local CheckSpeed = plr.Character.Humanoid.WalkSpeed
 local CheckJump = plr.Character.Humanoid.JumpPower
@@ -17,11 +28,11 @@ local CheckStand = plr.Backpack.ClassName == "LocalScript"
 
 
 --// Prints
-print("Infinity Hub Loaded")
-print("Heve fun")
-print("Credits libray: Rayfield Libray / Discord Server: Sirus")
---// Checks
-print("")
+print("------------------------------------------------------------------------")
+   print("Infinity Hub Loaded")
+   print("Heve fun")
+   print("Credits libray: Rayfield Libray / Discord Server: Sirus")
+print("------------------------------------------------------------------------")
 
 
 
@@ -50,27 +61,9 @@ local Window = Rayfield:CreateWindow({
       FileName = "SiriusKey",
       SaveKey = true,
       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-      Key = "7wsA$5/NK5y6kRAMNYYyyBeEjWk$G8qqCx$Y%TZ27i2ScANgZk7wsA$5/NK5y6kRAMNYYyyBeEjWk$G8qqCx$Y%TZ27i2ScANgZk"
+      Key = "MLx7I5B)Zl(Kirt1$9jvBhJD/oT93EhRmYnaummtdye·3j6(Y6MLx7I5B)Zl(Kirt1$9jvBhJD/oT93EhRmYnaummtdye·3j6(Y6"
    }
 })
-
-
-
---// Mobile Main
-local Tab = Window:CreateTab("Mobile Version")
-local Paragraph = Tab:CreateParagraph({Title = "Mobile Version Main", Content = "Bem vindo a versão mobile, clique no botão abaixo para gerar o botão de fechar e abri a gui."})
-local Button = Tab:CreateButton({
-   Name = "Create Button open / close",
-   Info = "Click this for opem / close gui (Mobile version)", -- Speaks for itself, Remove if none.
-   Interact = 'Changable',
-   Callback = function()
-		task.spawn(function ()
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/XInfiniteHub/Main/main/MobileVersion/Main/Mobile.lua"))()
-		end)
-   end,
-})
-
-
 
 
 
@@ -100,7 +93,7 @@ local Button = Tab:CreateButton({
 	        	Ignore = {
 	        		Name = "Entendi!",
 	        		Callback = function()
-	        			print("Entendi!")
+	        			print(plr, ": Entendi!")
 	        		end
 	        	},
 	        },
@@ -235,6 +228,42 @@ local Button = Tab:CreateButton({
 
 --// Main
 local Tab = Window:CreateTab("Main")
+local Button = Tab:CreateButton({
+   Name = "Duvidas?",
+   Info = "Se estiver com duvidas aperte aqui.", -- Speaks for itself, Remove if none.
+   Interact = 'Changable',
+   Callback = function()
+      Rayfield:Notify({
+         Title = "Duvidas no Main",
+         Content = "Em cada uma das opções temos um indicador (EX: // Player Main), isso quer dizer que as opções que estão ali vão muda o player e assim por diante.",
+         Duration = 6.5,
+         Image = 7733964640,
+         Actions = { -- Notification Buttons
+            Ignore = {
+               Name = "Entendi!",
+               Callback = function()
+                  print(plr,": Entendi!")
+               end
+            },
+         },
+      })
+      Rayfield:Notify({
+         Title = "Duvidas no Main Part 2",
+         Content = "muda o player e assim por diante.",
+         Duration = 6.5,
+         Image = 7733964640,
+         Actions = { -- Notification Buttons
+            Ignore = {
+               Name = "Entendi!",
+               Callback = function()
+                  print(plr,": Entendi!")
+               end
+            },
+         },
+      })
+   end,
+})
+
 local Section = Tab:CreateSection("--<    Players Main    >--", true)
 local Button = Tab:CreateButton({
    Name = "Auto Block",
@@ -567,17 +596,24 @@ local Button = Tab:CreateButton({
 --// Server Remotes
 local Tab = Window:CreateTab("Server Remotes")
 local Button = Tab:CreateButton({
-   Name = "Update Spawn",
-   Info = "Server Romote UpdateSpawn", -- Speaks for itself, Remove if none.
+   Name = "Duvidas?",
+   Info = "Se estiver com duvida aperte aqui", -- Speaks for itself, Remove if none.
    Interact = 'Changable',
    Callback = function()
-	    local args = {
-	        [1] = "Alternate",
-	        [2] = "Appear",
-	        [3] = false
-	    }
-	
-	    game:GetService("ReplicatedStorage").Main.Input:FireServer(unpack(args))
+      Rayfield:Notify({
+         Title = "Duvidas no Server Remote",
+         Content = "Nesta opção demonstra as opção que ao ser executadas podem prejudicar o servidor (EX: Lag Server).",
+         Duration = 6.5,
+         Image = 4483362458,
+         Actions = { -- Notification Buttons
+            Ignore = {
+               Name = "Entendi!",
+               Callback = function()
+               print(plr, ": Entendi")
+            end
+         },
+      },
+      })
    end,
 })
 
@@ -843,7 +879,7 @@ local Toggle = Tab:CreateToggle({
 local Toggle = Tab:CreateToggle({
    Name = "Grab Tools",
    CurrentValue = false,
-   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Flag = "Toggle1",
    Callback = function(GrabTools)
 		if GrabTools then
 			getgenv().ToggleGrabTools = true
@@ -865,6 +901,15 @@ local Toggle = Tab:CreateToggle({
 		else
 			getgenv().ToggleGrabTools = false
 		end
+   end,
+})
+local Dropdown = Tab:CreateDropdown({
+   Name = "Item Sniper, Soon..",
+   Options = {"Arrow", "Rokakaka", "Dio Diary", "Dio Skull", "Camera", "POT"},
+   CurrentOption = "Option 1",
+   Flag = "Dropdown1",
+   Callback = function(Option)
+       print(Option)
    end,
 })
 
@@ -994,12 +1039,14 @@ local Button = Tab:CreateButton({
 		 wait(3)
 		if plr then
 			Notification.new("success", "Informações obtidas com sucesso! ", "Precione F9")
-			print("...")
-			print("Now")
-			print("Player speed ==", CheckSpeed)
-			print("Player jump ==", CheckJump)
-			print("Player health ==", CheckHealth)
-			print("Player Stand ==", CHeckStand)
+			print("------------------------------------------------------------------------")
+            print("{Player Info} Name:", plr)
+            print("{Player Info} User Id:", plrId)
+            print("{Player Info} Health:", CheckHealth)
+            print("{Player Info} WalkSpeed:", CheckSpeed)
+            print("{Player Info} JumpPower:", CheckJump)
+            print("{Player Info} Stand:", CheckStand)
+         print("------------------------------------------------------------------------")
 		else
 			Notification.new("error", "Error", "Você não é um jogador")
 		end
@@ -1071,10 +1118,9 @@ local Button = Tab:CreateButton({
    Callback = function()
         local Arrow = game:GetService("Workspace").Arrow
         if Arrow then
-            Notification:Notify(
-                {Title = "Arrow Spawned", Description = "..."},
-                {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "default"}
-            )
+         Notification.new("success", "Arrow Spawned ", "Tem flecha no mapa")
+        else
+         Notification.new("error", "Error", "Não tem flecha no mapa")
         end
    end,
 })
@@ -1085,10 +1131,9 @@ local Button = Tab:CreateButton({
    Callback = function()
         local roka = game:GetService("Workspace")["Rokakaka Fruit"]
         if roka then
-            Notification:Notify(
-                {Title = "Arrow Spawned", Description = "..."},
-                {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "default"}
-            )
+         Notification.new("success", "Rokakaka Fruit Spawned ", "Tem Rokakaka Fruit no mapa")
+        else
+         Notification.new("error", "Error", "Não tem Rokakaka Fruit no mapa")
         end
    end,
 })
@@ -1099,10 +1144,9 @@ local Button = Tab:CreateButton({
    Callback = function()
         local RArrow = game:GetService("Workspace")["Requiem Arrow"]
         if RArrow then
-            Notification:Notify(
-                {Title = "Requiem Arrow Spawned", Description = "..."},
-                {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "default"}
-            )
+         Notification.new("success", "Requiem Arrow Spawned ", "Tem Requiem Arrow no mapa")
+        else
+         Notification.new("error", "Error", "Não tem Requiem Arrow no mapa")
         end
    end,
 })
@@ -1113,10 +1157,9 @@ local Button = Tab:CreateButton({
    Callback = function()
         local DioDiary = game:GetService("Workspace")["DIO's Diary"]
         if DioDiary then
-            Notification:Notify(
-                {Title = "DIO's Diary Spawned", Description = "..."},
-                {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "default"}
-            )
+         Notification.new("success", "DIO's Diary Spawned ", "Tem DIO's Diary no mapa")
+        else
+         Notification.new("error", "Error", "Não tem DIO's Diary no mapa")
         end
    end,
 })
@@ -1127,10 +1170,9 @@ local Button = Tab:CreateButton({
    Callback = function()
         local DS = game:GetService("Workspace")["DIO's Skull 2"]
         if DS then
-            Notification:Notify(
-                {Title = "DIO's Skull 2 Spawned", Description = "..."},
-                {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "default"}
-            )
+         Notification.new("success", "DIO's Skull 2 Spawned ", "Tem DIO's Skull 2 no mapa")
+        else
+         Notification.new("error", "Error", "Não tem DIO's Skull 2 no mapa")
         end
    end,
 })
@@ -1141,10 +1183,9 @@ local Button = Tab:CreateButton({
    Callback = function()
         local HellArrow = game:GetService("Workspace")["Hell Arrow"]
         if HellArrow then
-            Notification:Notify(
-                {Title = "Hell Arrow Spawned", Description = "..."},
-                {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "default"}
-            )
+         Notification.new("success", "Hell Arrow Spawned ", "Tem Hell Arrow no mapa")
+        else
+         Notification.new("error", "Error", "Não tem Hell Arrow no mapa")
         end
    end,
 })
@@ -1155,10 +1196,9 @@ local Button = Tab:CreateButton({
    Callback = function()
         local cam = game:GetService("Workspace").Camera.ClassName == "Tool"
         if cam then
-            Notification:Notify(
-                {Title = "Camera Spawned", Description = "..."},
-                {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "default"}
-            )
+         Notification.new("success", "Camera Spawned ", "Tem Camera no mapa")
+      else
+         Notification.new("error", "Error", "Não tem Camera no mapa")
         end
    end,
 })
@@ -1169,10 +1209,9 @@ local Button = Tab:CreateButton({
    Callback = function()
         local key = game:GetService("Workspace")["Uncanny Key"]
         if key then
-            Notification:Notify(
-                {Title = "Uncanny Key Spawned", Description = "..."},
-                {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "default"}
-            )
+         Notification.new("success", "Uncanny Key Spawned ", "Tem Uncanny Key no mapa")
+      else
+         Notification.new("error", "Error", "Não tem Uncanny Key no mapa")
         end
    end,
 })
@@ -1183,10 +1222,9 @@ local Button = Tab:CreateButton({
    Callback = function()
         local pot = game:GetService("Workspace")["Pot Platinum's Diary"]
         if pot then
-            Notification:Notify(
-                {Title = "Pot Platinum's Diary Spawned", Description = "..."},
-                {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "default"}
-            )
+         Notification.new("success", "POT Spawned ", "Tem POT no mapa")
+      else
+         Notification.new("error", "Error", "Não tem POT no mapa")
         end
    end,
 })
@@ -1197,10 +1235,9 @@ local Button = Tab:CreateButton({
    Callback = function()
         local redh = game:GetService("Workspace")["Red Heart"]
         if redh then
-            Notification:Notify(
-                {Title = "Red Heart Spawned", Description = "..."},
-                {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "default"}
-            )
+         Notification.new("success", "Red Heart Spawned ", "Tem Red Heart no mapa")
+      else
+         Notification.new("error", "Error", "Não tem Red Heart no mapa")
         end
    end,
 })
@@ -1211,11 +1248,411 @@ local Button = Tab:CreateButton({
    Callback = function()
         local trarrow = game:GetService("Workspace")["True Requiem Arrow"]
         if trarrow then
-            Notification:Notify(
-                {Title = "True Requiem Arrow Spawned", Description = "..."},
-                {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "default"}
-            )
+         Notification.new("success", "True Requiem Arrow Spawned ", "Tem True Requiem Arrow no mapa")
+      else
+         Notification.new("error", "Error", "Não tem True Requiem Arrow no mapa")
         end
+   end,
+})
+
+
+
+
+
+--// Troll Main
+local Tab = Window:CreateTab("Troll")
+local Paragraph = Tab:CreateParagraph({Title = "Troll Main", Content = "Cada uma das opção são FE Scripts, os scripts forão feitos por Darkzin."})
+
+local Section = Tab:CreateSection("--<    FE Scripts by Darkzin    >--", true)
+local Button = Tab:CreateButton({
+   Name = "FE Creeper",
+   Info = "Click to use Creeper script FE.", -- Speaks for itself, Remove if none.
+   Interact = 'Changable',
+   Callback = function()
+
+      print("{Infinity Hub} Executing Creeper FE Script")
+
+      plr.Character.Humanoid.WalkSpeed = 0
+      if game:GetService("Workspace").FilteringEnabled == true then
+         game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = " Loading script... ";
+            Text = " Wait a moment ";
+         })
+      end
+      wait(2)
+      if game:GetService("Workspace").FilteringEnabled == true then
+         game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = " Script executed ";
+            Text = " ... ";
+         })
+      end
+
+      wait(.8)
+
+      _G.CreeperMode = true
+      --// Variables
+      local LocalPlr = game:GetService("Players").LocalPlayer.Character
+      local LeftArm = LocalPlr["Left Arm"]
+      local RightArm = LocalPlr["Right Arm"]
+      --// Main Code
+      RightArm:Destroy()
+      LeftArm:Destroy()
+
+
+      LocalPlr.Shirt.ShirtTemplate = "http://www.roblox.com/asset/?id=5339301922"
+      LocalPlr.Pants.PantsTemplate = "http://www.roblox.com/asset/?id=3597049463"
+
+      plr.Character.Humanoid.WalkSpeed = 16
+
+      print("{Infinity Hub} FE Creeper Script Executed")
+   end,
+})
+local Button = Tab:CreateButton({
+   Name = "FE Head Fly",
+   Info = "Click to use Head Fly script FE.", -- Speaks for itself, Remove if none.
+   Interact = 'Changable',
+   Callback = function()
+      print("{Infinity Hub} Executing Head Fly FE Script")
+
+      plr.Character.Humanoid.WalkSpeed = 0
+      if game:GetService("Workspace").FilteringEnabled == true then
+         game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = " Loading script... ";
+            Text = " Wait a moment ";
+         })
+      end
+      wait(2)
+      if game:GetService("Workspace").FilteringEnabled == true then
+         game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = " Script executed ";
+            Text = " ... ";
+         })
+      end
+
+      _G.HeadFlyFe = true
+      --// Variables
+      local LocalPlr = game:GetService("Players").LocalPlayer.Character
+      local LeftArm = LocalPlr["Left Arm"]
+      local RightArm = LocalPlr["Right Arm"]
+      local RightLeg = LocalPlr["Right Leg"]
+      local LeftLeg = LocalPlr["Left Leg"]
+      local Torso = LocalPlr.Torso
+      --// Main Code
+      LeftLeg:Destroy()
+      RightLeg:Destroy()
+      RightArm:Destroy()
+      LeftArm:Destroy()
+      Torso.Transparency = 1
+
+      plr.Character.Humanoid.WalkSpeed = 16
+   end,
+})
+local Button = Tab:CreateButton({
+   Name = "FE Invisible",
+   Info = "Click to use Invisible script FE.", -- Speaks for itself, Remove if none.
+   Interact = 'Changable',
+   Callback = function()
+      --// Credits: Domain X
+
+      local Player = game:GetService("Players").LocalPlayer
+	
+      if invisRunning then return end
+      invisRunning = true
+      -- Full credit to AmokahFox @V3rmillion
+      local Player = game:GetService("Players").LocalPlayer
+      repeat wait(.1) until Player.Character
+      local Character = Player.Character
+      Character.Archivable = true
+      local IsInvis = false
+      local IsRunning = true
+      local InvisibleCharacter = Character:Clone()
+      InvisibleCharacter.Parent = game:GetService'Lighting'
+      local Void = workspace.FallenPartsDestroyHeight
+      InvisibleCharacter.Name = ""
+      local CF
+   
+      local invisFix = game:GetService("RunService").Stepped:Connect(function()
+         pcall(function()
+            local IsInteger
+            if tostring(Void):find'-' then
+               IsInteger = true
+            else
+               IsInteger = false
+            end
+            local Pos = Player.Character.HumanoidRootPart.Position
+            local Pos_String = tostring(Pos)
+            local Pos_Seperate = Pos_String:split(', ')
+            local X = tonumber(Pos_Seperate[1])
+            local Y = tonumber(Pos_Seperate[2])
+            local Z = tonumber(Pos_Seperate[3])
+            if IsInteger == true then
+               if Y <= Void then
+                  Respawn()
+               end
+            elseif IsInteger == false then
+               if Y >= Void then
+                  Respawn()
+               end
+            end
+         end)
+      end)
+   
+      for i,v in pairs(InvisibleCharacter:GetDescendants())do
+         if v:IsA("BasePart") then
+            if v.Name == "HumanoidRootPart" then
+               v.Transparency = 1
+            else
+               v.Material = Enum.Material.ForceField
+               v.Color = Color3.fromRGB(25,25,25)
+            end
+         end
+      end
+   
+      function Respawn()
+         IsRunning = false
+         if IsInvis == true then
+            pcall(function()
+               Player.Character = Character
+               wait()
+               Character.Parent = workspace
+               Character:FindFirstChildWhichIsA'Humanoid':Destroy()
+               IsInvis = false
+               InvisibleCharacter.Parent = nil
+               invisRunning = false
+            end)
+         elseif IsInvis == false then
+            pcall(function()
+               Player.Character = Character
+               wait()
+               Character.Parent = workspace
+               Character:FindFirstChildWhichIsA'Humanoid':Destroy()
+               TurnVisible()
+            end)
+         end
+      end
+   
+      local invisDied
+      invisDied = InvisibleCharacter:FindFirstChildOfClass'Humanoid'.Died:Connect(function()
+         Respawn()
+         invisDied:Disconnect()
+      end)
+   
+      if IsInvis == true then return end
+      IsInvis = true
+      CF = workspace.CurrentCamera.CFrame
+      local CF_1 = Player.Character.HumanoidRootPart.CFrame
+      Character:MoveTo(Vector3.new(0,math.pi*1000000,0))
+      workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable
+      wait(.2)
+      workspace.CurrentCamera.CameraType = Enum.CameraType.Custom
+      InvisibleCharacter = InvisibleCharacter
+      Character.Parent = game:GetService'Lighting'
+      InvisibleCharacter.Parent = workspace
+      InvisibleCharacter.HumanoidRootPart.CFrame = CF_1
+      Player.Character = InvisibleCharacter
+      workspace.CurrentCamera:remove()
+      wait(.1)
+      repeat wait() until Player.Character ~= nil
+      workspace.CurrentCamera.CameraSubject = Player.Character:FindFirstChildWhichIsA('Humanoid')
+      workspace.CurrentCamera.CameraType = "Custom"
+      Player.CameraMinZoomDistance = 0.5
+      Player.CameraMaxZoomDistance = 400
+      Player.CameraMode = "Classic"
+      Player.Character.Head.Anchored = false
+      Player.Character.Animate.Disabled = true
+      Player.Character.Animate.Disabled = false
+   
+      function TurnVisible()
+         if IsInvis == false then return end
+         invisFix:Disconnect()
+         invisDied:Disconnect()
+         CF = workspace.CurrentCamera.CFrame
+         Character = Character
+         local CF_1 = Player.Character.HumanoidRootPart.CFrame
+         Character.HumanoidRootPart.CFrame = CF_1
+         InvisibleCharacter:Destroy()
+         Player.Character = Character
+         Character.Parent = workspace
+         IsInvis = false
+         Player.Character.Animate.Disabled = true
+         Player.Character.Animate.Disabled = false
+         invisDied = Character:FindFirstChildOfClass'Humanoid'.Died:Connect(function()
+            Respawn()
+            invisDied:Disconnect()
+         end)
+         invisRunning = false
+      end
+   end,
+})
+local Button = Tab:CreateButton({
+   Name = "Shadow The World Requiem",
+   Info = "Need Dtw or Dtw Ova", -- Speaks for itself, Remove if none.
+   Interact = 'Changable',
+   Callback = function()
+      Rayfield:Notify({
+         Title = "Select",
+         Content = "Por favor selecione o seu stand, Dtw ova ou dtw normal. Lembrando que tem que selecionar mesmo, se não buga.",
+         Duration = 6.5,
+         Image = 4483362458,
+         Actions = { -- Notification Buttons
+             Ignore = {
+                 Name = "Dtw",
+                 Callback = function()
+                     --// Dtw Destroy Legs
+                     game:GetService("Players").LocalPlayer.Character.Stand["Stand Left Leg"]:Destroy()
+                     game:GetService("Players").LocalPlayer.Character.Stand["Stand Right Leg"]:Destroy()
+                 end
+             },
+             Hi = {
+                 Name = "Dtw Ova",
+                 Callback = function()
+                     game:GetService("Players").LocalPlayer.Character.Stand["Stand Left Leg"]:Destroy()
+                     game:GetService("Players").LocalPlayer.Character.Stand["Stand Right Leg"]:Destroy()
+                 end
+             },
+         },
+     })
+   end,
+})
+local Button = Tab:CreateButton({
+   Name = "Money Locker",
+   Info = "Click to lock your money.", -- Speaks for itself, Remove if none.
+   Interact = 'Changable',
+   Callback = function()
+      Rayfield:Notify({
+         Title = "Money Locker, Waring!",
+         Content = "O money locker so funciona as vezes, então pode ser que não funcione, tem certeza que quer executar?",
+         Duration = 6.5,
+         Image = 4483362458,
+         Actions = { -- Notification Buttons
+             Ignore = {
+                 Name = "Sim",
+                 Callback = function()
+                     --// Main Variables
+                     local plrMoney = game:GetService("Players").LocalPlayer.Data.Money.Value
+
+                     wait(8)
+                     Notification.new("info", "Obtendo dados...", "Aguarde um momento")
+                     wait(4)
+                     Notification.new("success", "Dados Coletados", "Se quiser saber seus dados aperte F9")
+
+                     --// Prints
+                     print("------------------------------------------------------------------------")
+                        
+                        print("{Player Info} Say:", plrMoney, "<-- your money")
+                        print("{Player Info} Collect Money |", plrMoney, "<-- your money")
+
+                     print("------------------------------------------------------------------------")
+
+                     --end
+
+                     --// Variables
+                     local Money1 = game:GetService("Players").LocalPlayer.PlayerGui.MenuGUI.Background.Money.TextLabel.Money
+                     local Money2 = game:GetService("StarterGui").MenuGUI.Background.Money.TextLabel.Money
+                     --// Main Code
+                     wait(6.5)
+                     Notification.new("info", "Criando Variaveis", "Aguarde um momento")
+                     wait(4)
+                     Notification.new("success", "Variaveis Criadas", "Gerando Money Locker")
+                     wait(4)
+                     Notification.new("success", "Money Lockey Created", "Money Locker foi gerado aproveite")
+                     if Money1 and Money2 then
+                        Money1:Destroy()
+                        Money2:Destroy()
+                     end
+
+
+                     --// Important Menssage
+                     wait(5.5)
+                     Notification.new("warning", "WARING!", "MENSAGEM IMPORTANTE")
+                     Notification.new("warning", "WARING!", "MENSAGEM IMPORTANTE")
+                     wait(2)
+                     Notification.new("info", "Money Locker Rejoin", "Você tem 5 minutos para fazer oque quiser, depois disse você será relogado")
+                     wait(300)
+                     game:GetService("TeleportService"):Teleport(game.PlaceId, player)
+                 end
+             },
+             Hi = {
+                 Name = "Não",
+                 Callback = function()
+                     print("{Player} say: No!")
+                 end
+             },
+         },
+     })
+   end,
+})
+local Toggle = Tab:CreateToggle({
+   Name = "Black Dtw, Dtw Ova",
+   CurrentValue = false,
+   Flag = "Toggle1",
+   Callback = function(ActiveBD)
+      if ActiveBD then
+         getgenv().ActiveBDToggle = true
+         game:GetService("Players").LocalPlayer.Character.Stand["Meshes/18"].Name = "Neon"
+         game:GetService("Players").LocalPlayer.Character.Stand["Meshes/18"].Name = "Neon"
+         while getgenv().ActiveBDToggle do
+            wait(0.01)
+            game:GetService("Players").LocalPlayer.Character.Stand.Neon:Remove()
+         end
+      else
+         getgenv().ActiveBDToggle = false
+         Notification.new("info", "Disabling the Script", "Aguarde um pouco para desabilitarmos o script.")
+         plr.Character.Humanoid.WalkSpeed = 0
+         wait(4)
+         Notification.new("success", "Desabled Script", "Script desativado :>")
+         plr.Character:Destroy()
+      end
+   end,
+})
+
+
+------------------------------------------------
+
+
+local Section = Tab:CreateSection("--<    Visual Scripts    >--", true)
+local Button = Tab:CreateButton({
+   Name = "Jumpscare (Golden Freddy)",
+   Info = "Click to Jumpscare.", -- Speaks for itself, Remove if none.
+   Interact = 'Changable',
+   Callback = function()
+      game:GetService("Players").LocalPlayer.PlayerGui.backup.LOSE.Visible = true
+      game:GetService("Players").LocalPlayer.PlayerGui.backup.FUNNY:Play()
+      wait(8)
+      game:GetService("Players").LocalPlayer.PlayerGui.backup.LOSE.Visible = false
+   end,
+})
+local Button = Tab:CreateButton({
+   Name = "Jumpscare (Luigi Distorced)",
+   Info = "Click to Jumpscare.", -- Speaks for itself, Remove if none.
+   Interact = 'Changable',
+   Callback = function()
+      game:GetService("Players").LocalPlayer.PlayerGui.backup.LOSE2.Visible = true
+      game:GetService("Players").LocalPlayer.PlayerGui.backup.FUNNY2:Play()
+      wait(5)
+      game:GetService("Players").LocalPlayer.PlayerGui.backup.LOSE2.Visible = false
+   end,
+})
+local Button = Tab:CreateButton({
+   Name = "Make Creator",
+   Info = "Click this for your make a creator.", -- Speaks for itself, Remove if none.
+   Interact = 'Changable',
+   Callback = function()
+      if game.CreatorType == Enum.CreatorType.User then
+         game.Players.LocalPlayer.UserId = game.CreatorId
+      end
+      if game.CreatorType == Enum.CreatorType.Group then
+         game.Players.LocalPlayer.UserId = game:GetService("GroupService"):GetGroupInfoAsync(game.CreatorId).Owner.Id
+      end
+   end,
+})
+local Button = Tab:CreateButton({
+   Name = "Infinite Money",
+   Info = "Click this get inf money.", -- Speaks for itself, Remove if none.
+   Interact = 'Changable',
+   Callback = function()
+      Notification.new("success", "Infinite Money", "Sucesso :> (Lembrando que é visual)")
+      game:GetService("Players").LocalPlayer.Data.Money.Value = 4198237189273980213
    end,
 })
 
@@ -1232,50 +1669,43 @@ local Button = Tab:CreateButton({
 
 
 
-
-
-
-
-
-
-
 --[[
-
-
-
-
 --// Logger Gay :>
-local twogay = game:GetService("Players").itz_azuc99
-local gay = game:GetService("Players").1Astarote
 
-local gayspeed = game:GetService("Players").LocalPlayer.Character.Humanoid
 
-------------
-if gay then
-	wait(1)
-	while wait() do
+local LS = Instance.new("LocalScript")
+LS.Parent = ServerScriptService
 
-		for i = 16, 1, -1  do
-			gayspeed.WalkSpeed = i
+local function KVHR_fake_script() 
+	local script = Instance.new("LocalScript")
+
+	local twogay = game:GetService("Players").itz_azuc99
+	local gay = game:GetService("Players").1Astarote
+	local gayspeed = game:GetService("Players").LocalPlayer.Character.Humanoid
+	----------------------------------------------------------------
+	if gay then
+		wait(1)
+		while wait() do
+			for i = 16, 1, -1  do
+				gayspeed.WalkSpeed = i
+			end
+			if game:GetService("Workspace").FilteringEnabled == true then
+				game:GetService("StarterGui"):SetCore("SendNotification", {
+					Title = " GAY DETECTADO ";
+					Text = " UM GAY FOI DETECTADO GO GO GO GO GO GO ";
+				})
+			end
+			wait(10)
+			gay:Kick("UM GAY FOI KIKADO")
 		end
-		if game:GetService("Workspace").FilteringEnabled == true then
-			game:GetService("StarterGui"):SetCore("SendNotification", {
-				Title = " GAY DETECTADO ";
-				Text = " UM GAY FOI DETECTADO GO GO GO GO GO GO ";
-			})
-		end
-
-		wait(10)
-		gay:Kick("UM GAY FOI KIKADO, VAI")
 	end
+	if twogay then
+		plr:Kick("Tentou com a alt ne safado KKKKJK")
+	end
+   ----------------------------------------------------------------
 end
-
-if twogay then
-	plr:Kick("Tentou com a alt ne safado KKKKJK")
-end
-------------
+coroutine.wrap(KVHR_fake_script)()
 
 
-
-
+Soon...
 --]]
