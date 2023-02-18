@@ -68,6 +68,24 @@ local Window = Rayfield:CreateWindow({
 
 
 
+
+--// Button Main
+local Tab = Window:CreateTab("Mobile Version")
+local Paragraph = Tab:CreateParagraph({Title = "Mobile Version Main", Content = "Bem vindo a versão mobile do Infinity Hub, a opções abaixo gera o botão de abrir e fecha o botão"})
+local Button = Tab:CreateButton({
+   Name = "Create Button",
+   Info = "Click for create a button to Open and Close Gui.", -- Speaks for itself, Remove if none.
+   Interact = 'Changable',
+   Callback = function()
+	loadstring(
+		game:HttpGet("https://raw.githubusercontent.com/XInfiniteHub/Main/main/MobileVersion/Main/Mobile.lua"),".lua",
+	true)
+   end,
+})
+
+
+
+
 --// Welcome Main
 local Tab = Window:CreateTab("Welcome")
 local Paragraph = Tab:CreateParagraph({Title = "Welcome Main", Content = "Welcome to Infinity Hub"})
