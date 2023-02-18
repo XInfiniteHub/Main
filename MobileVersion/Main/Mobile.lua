@@ -1,41 +1,50 @@
---[[
-    Made by darkzin XD
---]]
+-- (VOID) : Gui to Lua
+-- Version: 1.4
 
-local OpenCloseINFHUB = Instance.new("ScreenGui")
+-- Instances:
+
+local Key = Instance.new("ScreenGui")
+local OpenButton = Instance.new("Frame")
+local UIStroke = Instance.new("UIStroke")
+local UICorner = Instance.new("UICorner")
 local Open = Instance.new("TextButton")
 local Background = Instance.new("Frame")
-local CornerRadius = Instance.new("UICorner")
-local TextLabel = Instance.new("TextLabel")
-local UICorner = Instance.new("UICorner")
-local UIStroke = Instance.new("UIStroke")
+local CloseButton = Instance.new("Frame")
+local UIStroke_2 = Instance.new("UIStroke")
+local UICorner_2 = Instance.new("UICorner")
 local Close = Instance.new("TextButton")
 local Background_2 = Instance.new("Frame")
-local CornerRadius_2 = Instance.new("UICorner")
-local TextLabel_2 = Instance.new("TextLabel")
-local UICorner_2 = Instance.new("UICorner")
-local UIStroke_2 = Instance.new("UIStroke")
 
 --Properties:
 
-OpenCloseINFHUB.Name = "OpenCloseINFHUB"
-OpenCloseINFHUB.Parent = (game:GetService("CoreGui") or gethui())
-OpenCloseINFHUB.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-OpenCloseINFHUB.ResetOnSpawn = false
+Key.Name = "Key"
+Key.Parent = (game:GetService("CoreGui") or gethui())
+Key.DisplayOrder = 100
+Key.ResetOnSpawn = false
+
+OpenButton.Name = "OpenButton"
+OpenButton.Parent = Key
+OpenButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+OpenButton.BorderSizePixel = 0
+OpenButton.Position = UDim2.new(0.0592842139, 0, 0.132608876, 0)
+OpenButton.Size = UDim2.new(0, 74, 0, 28)
+OpenButton.Visible = false
+
+UIStroke.Color = Color3.fromRGB(65, 65, 65)
+UIStroke.Parent = OpenButton
+
+UICorner.CornerRadius = UDim.new(0, 6)
+UICorner.Parent = OpenButton
 
 Open.Name = "Open"
-Open.Parent = OpenCloseINFHUB
-Open.AnchorPoint = Vector2.new(0.5, 0.5)
-Open.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
-Open.Position = UDim2.new(0.0505193435, 0, 0.0598214157, 0)
-Open.Size = UDim2.new(0, 67, 0, 28)
-Open.Visible = false
-Open.Font = Enum.Font.SourceSans
-Open.Text = ""
-Open.TextColor3 = Color3.fromRGB(0, 0, 0)
+Open.Parent = OpenButton
+Open.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Open.BackgroundTransparency = 1.000
+Open.Size = UDim2.new(0, 74, 0, 28)
+Open.Font = Enum.Font.GothamBold
+Open.Text = "Open"
+Open.TextColor3 = Color3.fromRGB(255, 255, 255)
 Open.TextSize = 14.000
-Open.TextTransparency = 1.000
-Open.TextWrapped = true
 
 Background.Name = "Background"
 Background.Parent = Open
@@ -46,37 +55,28 @@ Background.ClipsDescendants = true
 Background.Position = UDim2.new(0.5, 0, 0.5, 0)
 Background.Size = UDim2.new(1, 0, 1, 0)
 
-CornerRadius.CornerRadius = UDim.new(0, 4)
-CornerRadius.Name = "CornerRadius"
-CornerRadius.Parent = Background
+CloseButton.Name = "CloseButton"
+CloseButton.Parent = Key
+CloseButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+CloseButton.BorderSizePixel = 0
+CloseButton.Position = UDim2.new(0.0592842139, 0, 0.132608876, 0)
+CloseButton.Size = UDim2.new(0, 74, 0, 28)
 
-TextLabel.Parent = Open
-TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.Size = UDim2.new(1, 0, 1, 0)
-TextLabel.Font = Enum.Font.SourceSansSemibold
-TextLabel.Text = "Open"
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextSize = 20.000
+UIStroke_2.Color = Color3.fromRGB(65, 65, 65)
+UIStroke_2.Parent = CloseButton
 
-UICorner.Parent = Open
-
-UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke.Color = Color3.fromRGB(248, 248, 248)
-UIStroke.Parent = Open
+UICorner_2.CornerRadius = UDim.new(0, 6)
+UICorner_2.Parent = CloseButton
 
 Close.Name = "Close"
-Close.Parent = OpenCloseINFHUB
-Close.AnchorPoint = Vector2.new(0.5, 0.5)
-Close.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
-Close.Position = UDim2.new(0.0505193435, 0, 0.0598214157, 0)
-Close.Size = UDim2.new(0, 67, 0, 28)
-Close.Font = Enum.Font.SourceSans
-Close.Text = ""
-Close.TextColor3 = Color3.fromRGB(0, 0, 0)
+Close.Parent = CloseButton
+Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Close.BackgroundTransparency = 1.000
+Close.Size = UDim2.new(0, 74, 0, 28)
+Close.Font = Enum.Font.GothamBold
+Close.Text = "Close"
+Close.TextColor3 = Color3.fromRGB(255, 255, 255)
 Close.TextSize = 14.000
-Close.TextTransparency = 1.000
-Close.TextWrapped = true
 
 Background_2.Name = "Background"
 Background_2.Parent = Close
@@ -87,28 +87,9 @@ Background_2.ClipsDescendants = true
 Background_2.Position = UDim2.new(0.5, 0, 0.5, 0)
 Background_2.Size = UDim2.new(1, 0, 1, 0)
 
-CornerRadius_2.CornerRadius = UDim.new(0, 4)
-CornerRadius_2.Name = "CornerRadius"
-CornerRadius_2.Parent = Background_2
-
-TextLabel_2.Parent = Close
-TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.BackgroundTransparency = 1.000
-TextLabel_2.Size = UDim2.new(1, 0, 1, 0)
-TextLabel_2.Font = Enum.Font.SourceSansSemibold
-TextLabel_2.Text = "Close"
-TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.TextSize = 20.000
-
-UICorner_2.Parent = Close
-
-UIStroke_2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_2.Color = Color3.fromRGB(248, 248, 248)
-UIStroke_2.Parent = Close
-
 -- Scripts:
 
-local function IUAXOW_fake_script() -- Open.RippleEffect 
+local function MEREZUQ_fake_script() -- Open.RippleEffect 
 	local script = Instance.new('LocalScript', Open)
 
 	local Players = game:GetService("Players")
@@ -128,7 +109,7 @@ local function IUAXOW_fake_script() -- Open.RippleEffect
 		local cornerRadius = Instance.new("UICorner")
 		
 		circle.AnchorPoint = Vector2.new(0.5, 0.5)
-		circle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		circle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 		circle.Size = UDim2.new(0, 0, 0, 0)
 		
 		cornerRadius.CornerRadius = UDim.new(0.5, 0)
@@ -252,24 +233,19 @@ local function IUAXOW_fake_script() -- Open.RippleEffect
 	button.MouseEnter:Connect(OnMouseEnter)
 	button.MouseLeave:Connect(OnMouseLeave)
 end
-coroutine.wrap(IUAXOW_fake_script)()
-local function OGCEC_fake_script() -- Open.Main 
+coroutine.wrap(MEREZUQ_fake_script)()
+local function GMFI_fake_script() -- Open.Main 
 	local script = Instance.new('LocalScript', Open)
 
-	--// Variables
-	local button = script.Parent
-	local CloseButton = script.Parent.Parent.Close
-	
-	
-	--// Main Code
-	button.MouseButton1Up:Connect(function ()
+	local a = script.Parent
+	a.MouseButton1Click:Connect(function ()
 		game:GetService("CoreGui").Rayfield.Enabled = true
-		button.Visible = false
-		CloseButton.Visible = true
+		script.Parent.Parent.Parent.CloseButton.Visible = true
+		a.Visible = false
 	end)
 end
-coroutine.wrap(OGCEC_fake_script)()
-local function VMZWFQB_fake_script() -- Close.RippleEffect 
+coroutine.wrap(GMFI_fake_script)()
+local function GFEFAS_fake_script() -- Close.RippleEffect 
 	local script = Instance.new('LocalScript', Close)
 
 	local Players = game:GetService("Players")
@@ -289,7 +265,7 @@ local function VMZWFQB_fake_script() -- Close.RippleEffect
 		local cornerRadius = Instance.new("UICorner")
 		
 		circle.AnchorPoint = Vector2.new(0.5, 0.5)
-		circle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		circle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 		circle.Size = UDim2.new(0, 0, 0, 0)
 		
 		cornerRadius.CornerRadius = UDim.new(0.5, 0)
@@ -413,20 +389,15 @@ local function VMZWFQB_fake_script() -- Close.RippleEffect
 	button.MouseEnter:Connect(OnMouseEnter)
 	button.MouseLeave:Connect(OnMouseLeave)
 end
-coroutine.wrap(VMZWFQB_fake_script)()
-local function ANIETXQ_fake_script() -- Close.Main 
+coroutine.wrap(GFEFAS_fake_script)()
+local function QVYJ_fake_script() -- Close.Main 
 	local script = Instance.new('LocalScript', Close)
 
-	--// Variables
-	local button = script.Parent
-	local OpenButton = script.Parent.Parent.Open
-	
-	
-	--// Main Code
-	button.MouseButton1Up:Connect(function ()
+	local a = script.Parent
+	a.MouseButton1Click:Connect(function ()
 		game:GetService("CoreGui").Rayfield.Enabled = false
-		button.Visible = false
-		OpenButton.Visible = true
+		script.Parent.Parent.Parent.OpenButton.Visible = true
+		a.Visible = false
 	end)
 end
-coroutine.wrap(ANIETXQ_fake_script)()
+coroutine.wrap(QVYJ_fake_script)()
