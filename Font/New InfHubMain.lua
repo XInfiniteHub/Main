@@ -1,7 +1,7 @@
 --[[
   
     Made by darkzin and cool
-    New Update 1.0.4
+    New Update 1.0.6
 
 --]]
 
