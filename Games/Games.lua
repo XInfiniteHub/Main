@@ -16,4 +16,7 @@ elseif PlaceId == 11423467063 then
 --// Shindo Life:
 elseif PlaceId == 4601350214 then
 	loadstring(game:HttpGet"https://raw.githubusercontent.com/XInfiniteHub/Main/main/Shindo%20Life/SLObs.lua")()
+--// Bild a boat for tesure
+elseif PlaceId == 537413528 then
+	loadstring(game:HttpGet"https://raw.githubusercontent.com/XInfiniteHub/Main/main/Bild%20a%20Boat/BildObs.lua")()
 end
