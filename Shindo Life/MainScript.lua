@@ -138,7 +138,7 @@ local Window = Rayfield:CreateWindow({
        FileName = "SiriusKey",
        SaveKey = true,
        GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-       Key = "MLx7I5B)Zl(Kirt1$9jvBhJD/oT93EhRmYnaummtdye·3j6(Y6MLx7I5B)Zl(Kirt1$9jvBhJD/oT93EhRmYnaummtdye·3j6(Y6"
+       Key = "85IEo3Qc&znH2ZbHk5Yf(FemY5b4nVu3QKx7joaissZFYF$jVs85IEo3Qc&znH2ZbHk5Yf(FemY5b4nVu3QKx7joaissZFYF$jVs"
     }
  })
 for i,v in pairs(getconnections(Player.Idled)) do
