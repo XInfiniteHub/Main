@@ -31,16 +31,12 @@ local Paragraph = Tab:CreateParagraph({Title = "Central Hub Stands Awakening", C
 local Button = Tab:CreateButton({
     Name = "Pc",
     Callback = function()
-        loadstring(
-            game:GetHttps("https://raw.githubusercontent.com/XInfiniteHub/Main/main/Scripts/Stand%20Awakening/New%20Infinity%20Hub%20Pc.lua",".lua"),
-        true)()
+        loadstring(game:HttpGet"https://raw.githubusercontent.com/XInfiniteHub/Main/main/Scripts/Stand%20Awakening/New%20Infinity%20Hub%20Pc.lua")()
     end,
 })
 local Button = Tab:CreateButton({
     Name = "Mobile",
     Callback = function()
-        loadstring(
-            game:GetHttps("https://raw.githubusercontent.com/XInfiniteHub/Main/main/Scripts/Stand%20Awakening/AutoBossPc.lua",".lua"),
-        true)()
+        loadstring(game:HttpGet"https://raw.githubusercontent.com/XInfiniteHub/Main/main/Scripts/Stand%20Awakening/AutoBossPc.lua")()
     end,
 })
