@@ -744,7 +744,7 @@ local Toggle = Tab:CreateToggle({
     CurrentValue = false,
     Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
     Callback = function(AutoNin)
-        Settings = AutoChi
+        Settings = AutoNin
         spawn(function()
         while Settings do
             wait()
@@ -758,7 +758,7 @@ local Toggle = Tab:CreateToggle({
     CurrentValue = false,
     Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
     Callback = function(AutoTai)
-        Settings = AutoChi
+        Settings = AutoTai
         spawn(function()
         while Settings do
             wait()
@@ -772,7 +772,7 @@ local Toggle = Tab:CreateToggle({
     CurrentValue = false,
     Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
     Callback = function(AutoHp)
-        Settings = AutoChi
+        Settings = AutoHp
         spawn(function()
         while Settings do
             wait()
