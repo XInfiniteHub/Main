@@ -13,9 +13,6 @@ if PlaceId == 5780309044 then
 	loadstring(game:HttpGet"https://raw.githubusercontent.com/XInfiniteHub/Main/main/Central/StandsAwakening/CentralObs.lua")()
 elseif PlaceId == 11423467063 then
 	loadstring(game:HttpGet"https://raw.githubusercontent.com/XInfiniteHub/Main/main/Central/StandsAwakening/CentralObs.lua")()
-------------------------------------------------------------------------------------------------------------------------------------
-	
-	
 --// Shindo Life:
 elseif PlaceId == 4601350214 then
 	loadstring(game:HttpGet"https://raw.githubusercontent.com/XInfiniteHub/Main/main/Shindo%20Life/SLObs.lua")()
