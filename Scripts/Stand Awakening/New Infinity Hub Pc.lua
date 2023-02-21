@@ -40,7 +40,7 @@ print("------------------------------------------------------------------------"
 getgenv().SecureMode = true
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/XInfiniteHub/Main/main/Font/Libray/RayFieldModed.lua'))()
 local Window = Rayfield:CreateWindow({
-   Name = "Infinity Hub  |  @Darkzin, @Cool",
+   Name = "Infinity Hub  |  @Darkzin, Cool",
    LoadingTitle = "Infinity Hub",
    LoadingSubtitle = "by darkzin and cool",
    ConfigurationSaving = {
@@ -106,12 +106,8 @@ local Button = Tab:CreateButton({
    Info = "Active", -- Speaks for itself, Remove if none.
    Interact = 'Changable',
    Callback = function()
-            local args = {
-        		[1] = 20000000,           
-        		[2] = "shadowdio"			
-        	}
-        
-        	game:GetService("ReplicatedStorage").Main.Timestop:FireServer(unpack(args))
+      --// 20 == Max
+      game:GetService("ReplicatedStorage").Main.Timestop:FireServer(20, "shadowdio")
    end,
 })
 local Button = Tab:CreateButton({
@@ -119,12 +115,8 @@ local Button = Tab:CreateButton({
    Info = "Active", -- Speaks for itself, Remove if none.
    Interact = 'Changable',
    Callback = function()
-        	local args = {
-        		[1] = 20000000,           -- 20000000 = 20 or 15
-        		[2] = "jotaro"			-- Shadow dio / Stw
-        	}
-
-        	game:GetService("ReplicatedStorage").Main.Timestop:FireServer(unpack(args))
+      --// 20 == Max
+      game:GetService("ReplicatedStorage").Main.Timestop:FireServer(20, "jotaro")
    end,
 })
 local Button = Tab:CreateButton({
@@ -132,12 +124,8 @@ local Button = Tab:CreateButton({
    Info = "Active", -- Speaks for itself, Remove if none.
    Interact = 'Changable',
    Callback = function()
-        	local args = {
-        		[1] = 20000000,           -- 20000000 = 20 or 15
-        		[2] = "diooh"			-- Shadow dio / Stw
-        	}
-
-        	game:GetService("ReplicatedStorage").Main.Timestop:FireServer(unpack(args))
+      --// 20 == Max
+      game:GetService("ReplicatedStorage").Main.Timestop:FireServer(20, "diooh")
    end,
 })
 local Button = Tab:CreateButton({
@@ -145,12 +133,8 @@ local Button = Tab:CreateButton({
    Info = "Active", -- Speaks for itself, Remove if none.
    Interact = 'Changable',
    Callback = function()
-        	local args = {
-        		[1] = 20000000,           -- 20000000 = 20 or 15
-        		[2] = "diooh"			-- Shadow dio / Stw
-        	}
-
-        	game:GetService("ReplicatedStorage").Main.Timestop:FireServer(unpack(args))
+      --// 20 == Max
+      game:GetService("ReplicatedStorage").Main.Timestop:FireServer(20, "diooh")
    end,
 })
 local Button = Tab:CreateButton({
@@ -158,12 +142,8 @@ local Button = Tab:CreateButton({
    Info = "Active", -- Speaks for itself, Remove if none.
    Interact = 'Changable',
    Callback = function()
-        	local args = {
-        		[1] = 20000000,           -- 20000000 = 20 or 15
-        		[2] = "jotaro"			-- Shadow dio / Stw
-        	}
-
-        	game:GetService("ReplicatedStorage").Main.Timestop:FireServer(unpack(args))
+      --// 20 == Max
+      game:GetService("ReplicatedStorage").Main.Timestop:FireServer(20, "jotaro")
    end,
 })
 local Button = Tab:CreateButton({
@@ -171,12 +151,8 @@ local Button = Tab:CreateButton({
    Info = "Active", -- Speaks for itself, Remove if none.
    Interact = 'Changable',
    Callback = function()
-        	local args = {
-        		[1] = 20000000,           -- 20000000 = 20 or 15
-        		[2] = "jotaro"			-- Shadow dio / Stw
-        	}
-
-        	game:GetService("ReplicatedStorage").Main.Timestop:FireServer(unpack(args))
+      --// 20 == Max
+      game:GetService("ReplicatedStorage").Main.Timestop:FireServer(20, "jotaro")
    end,
 })
 local Button = Tab:CreateButton({
@@ -184,12 +160,8 @@ local Button = Tab:CreateButton({
    Info = "Active", -- Speaks for itself, Remove if none.
    Interact = 'Changable',
    Callback = function()
-        	local args = {
-        		[1] = 20000000,           -- 20000000 = 20 or 15
-        		[2] = "diego"			-- Shadow dio / Stw
-        	}
-
-        	game:GetService("ReplicatedStorage").Main.Timestop:FireServer(unpack(args))
+      --// 20 == Max
+      game:GetService("ReplicatedStorage").Main.Timestop:FireServer(20, "diego")
    end,
 })
 local Button = Tab:CreateButton({
@@ -197,12 +169,8 @@ local Button = Tab:CreateButton({
    Info = "Active", -- Speaks for itself, Remove if none.
    Interact = 'Changable',
    Callback = function()
-        	local args = {
-        		[1] = 20000000,           -- 20000000 = 20 or 15
-        		[2] = "dioova"			-- Shadow dio / Stw
-        	}
-
-        	game:GetService("ReplicatedStorage").Main.Timestop:FireServer(unpack(args))
+      --// 20 == Max
+      game:GetService("ReplicatedStorage").Main.Timestop:FireServer(20, "dioova")
    end,
 })
 
@@ -1597,6 +1565,49 @@ local Toggle = Tab:CreateToggle({
          end
       else
          getgenv().ActiveBDToggle = false
+         Notification.new("info", "Disabling the Script", "Aguarde um pouco para desabilitarmos o script.")
+         plr.Character.Humanoid.WalkSpeed = 0
+         wait(4)
+         Notification.new("success", "Desabled Script", "Script desativado :>")
+         plr.Character:Destroy()
+      end
+   end,
+})
+local Toggle = Tab:CreateToggle({
+   Name = '"Cosmic" JSP',
+   CurrentValue = false,
+   Flag = "Toggle1",
+   Callback = function(ActiveCMB)
+      if ActiveCMB then
+         getgenv().ActiveCMBToggle = true
+         while getgenv().ActiveCMBToggle do
+            wait(0.01)
+            game:GetService("Players").LocalPlayer.Character.Stand["Neon."]:Destroy()
+         end
+      else
+         getgenv().ActiveCMBToggle = false
+         Notification.new("info", "Disabling the Script", "Aguarde um pouco para desabilitarmos o script.")
+         plr.Character.Humanoid.WalkSpeed = 0
+         wait(4)
+         Notification.new("success", "Desabled Script", "Script desativado :>")
+         plr.Character:Destroy()
+      end
+   end,
+})
+local Toggle = Tab:CreateToggle({
+   Name = 'Ws Au 😳',
+   CurrentValue = false,
+   Flag = "Toggle1",
+   Callback = function(ActiveWsAuT)
+      if ActiveWsAuT then
+         getgenv().ActiveWsAuTToggle = true
+         while getgenv().ActiveWsAuTToggle do
+            game:GetService("Players").LocalPlayer.Character.Stand.Gold:Remove()
+            game:GetService("Players").LocalPlayer.Character.Stand.Leather:Remove() 
+            game:GetService("Players").LocalPlayer.Character.Stand.Leather:Remove()
+         end
+      else
+         getgenv().ActiveWsAuTToggle = false
          Notification.new("info", "Disabling the Script", "Aguarde um pouco para desabilitarmos o script.")
          plr.Character.Humanoid.WalkSpeed = 0
          wait(4)
