@@ -32,7 +32,7 @@ local Button = Tab:CreateButton({
     Name = "Pc",
     Callback = function()
         loadstring(
-            game:GetHttps("https://raw.githubusercontent.com/XInfiniteHub/Main/main/Scripts/Stand%20Awakening/New%20Infinity%20Hub%20Pc.lua",".lua",
+            game:GetHttps("https://raw.githubusercontent.com/XInfiniteHub/Main/main/Scripts/Stand%20Awakening/New%20Infinity%20Hub%20Pc.lua",".lua"),
         true)()
     end,
 })
@@ -40,7 +40,7 @@ local Button = Tab:CreateButton({
     Name = "Mobile",
     Callback = function()
         loadstring(
-            game:GetHttps("https://raw.githubusercontent.com/XInfiniteHub/Main/main/Scripts/Stand%20Awakening/AutoBossPc.lua",".lua",
+            game:GetHttps("https://raw.githubusercontent.com/XInfiniteHub/Main/main/Scripts/Stand%20Awakening/AutoBossPc.lua",".lua"),
         true)()
     end,
 })
