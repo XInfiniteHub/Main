@@ -87,7 +87,7 @@ local Paragraph = Tab:CreateParagraph({Title = "Welcome", Content = "Bem vindo a
 
 
 local Section = Tab:CreateSection("--// Game", true)
-local Label = Tab:CreateLabel("Bild a Boat For Tesure")
+local Label = Tab:CreateLabel("Build a Boat For Treasure")
 
 
 local Section = Tab:CreateSection("--// Hub Version", true)
