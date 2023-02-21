@@ -159,6 +159,10 @@ local Section = Tab:CreateSection("--// Welcome", true)
 local Paragraph = Tab:CreateParagraph({Title = "Bem Vindo", Content = "Bem vindo ao Infinity Hub Shindo Life (Beta)"})
 
 
+local Section = Tab:CreateSection("--// Game", true)
+local Label = Tab:CreateLabel("Shindo Life")
+
+
 local Section = Tab:CreateSection("--// Hub Version", true)
 local Label = Tab:CreateLabel("Hub Version: 1.0.0")
 
