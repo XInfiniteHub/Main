@@ -40,7 +40,7 @@ print("------------------------------------------------------------------------"
 getgenv().SecureMode = true
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/XInfiniteHub/Main/main/Font/Libray/RayFieldModed.lua'))()
 local Window = Rayfield:CreateWindow({
-   Name = "Infinity Hub  |  @Darkzin, Cool",
+   Name = "Infinity Hub  |  @Darkzin, @Cool",
    LoadingTitle = "Infinity Hub",
    LoadingSubtitle = "by darkzin and cool",
    ConfigurationSaving = {
