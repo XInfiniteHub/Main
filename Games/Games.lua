@@ -12,7 +12,7 @@ local PlaceId = game.PlaceId
 if PlaceId == 5780309044 then
 	loadstring(game:HttpGet"https://raw.githubusercontent.com/XInfiniteHub/Main/main/Central/StandsAwakening/CentralObs.lua")()
 elseif PlaceId == 11423467063 then
-	loadstring(game:HttpGet"https://raw.githubusercontent.com/XInfiniteHub/Main/main/Central/StandsAwakening/CentralObs.lua")()
+	loadstring(game:HttpGet"https://raw.githubusercontent.com/XInfiniteHub/Main/main/Scripts/Stand%20Awakening/Auto%20Boss%20Pc%20and%20Mobile/CodeObs.lua",true)()
 --// Shindo Life:
 elseif PlaceId == 4601350214 then
 	loadstring(game:HttpGet"https://raw.githubusercontent.com/XInfiniteHub/Main/main/Shindo%20Life/SLObs.lua")()
