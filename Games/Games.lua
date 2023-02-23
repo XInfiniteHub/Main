@@ -19,4 +19,7 @@ elseif PlaceId == 4601350214 then
 --// Bild a boat for tesure
 elseif PlaceId == 537413528 then
 	loadstring(game:HttpGet"https://raw.githubusercontent.com/XInfiniteHub/Main/main/Bild%20a%20Boat/BildObs.lua")()
+--// World of Stands
+elseif PlaceId == 6728870912 then
+	loadstring(game:HttpGet"https://raw.githubusercontent.com/XInfiniteHub/Main/main/World%20of%20Stands%5D/MainObs.lua")()
 end
