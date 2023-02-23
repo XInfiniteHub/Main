@@ -36,6 +36,13 @@ if game:GetService("Workspace").FilteringEnabled == true then
 		Text = " ... ";
 	})
 end
+wait(2)
+if game:GetService("Workspace").FilteringEnabled == true then
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = " Do not have the stand activated";
+		Text = " ... ";
+	})
+end
 wait(4)
 if game:GetService("Workspace").FilteringEnabled == true then
 	game:GetService("StarterGui"):SetCore("SendNotification", {
