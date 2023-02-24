@@ -22,4 +22,7 @@ elseif PlaceId == 537413528 then
 --// World of Stands
 elseif PlaceId == 6728870912 then
 	loadstring(game:HttpGet"https://raw.githubusercontent.com/XInfiniteHub/Main/main/World%20of%20Stands%5D/MainObs.lua")()
+--// Lucky Blockys Battlegrounds
+elseif PlaceId == 662417684 then
+	loadstring(game:HttpGet"https://raw.githubusercontent.com/XInfiniteHub/Main/main/LUCKY%20BLOCKS%20Battlegrounds/Obs.lua")()
 end
